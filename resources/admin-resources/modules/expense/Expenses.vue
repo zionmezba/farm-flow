@@ -121,7 +121,7 @@ onMounted(async () => {
                     <input
                         type="text"
                         class="form-control"
-                        placeholder="type name.."
+                        placeholder="নাম টাইপ করুন.."
                         v-model="q_title"
                         @keyup="fetchData(1, expenseStore.limit, q_title)"
                     />
@@ -132,7 +132,7 @@ onMounted(async () => {
                         v-model="expenseStore.q_category"
                         @change="fetchData(1)"
                     >
-                        <option value="">select category</option>
+                        <option value="">ক্যাটাগরি নির্বাচন করুন</option>
                         <option
                             :key="expenseCategory.value"
                             :value="expenseCategory.value"
@@ -208,8 +208,8 @@ onMounted(async () => {
                             v-model="expenseStore.q_sort_order"
                             @change="fetchData(1)"
                         >
-                            <option value="desc">desc</option>
-                            <option value="asc">asc</option>
+                            <option value="desc">বড় থেকে ছোট</option>
+                            <option value="asc">ছোট থেকে বড়</option>
                         </select>
                     </div>
                 </div>

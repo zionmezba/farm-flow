@@ -6,48 +6,48 @@ const sidebarStore = useSidebar();
 
 const navlinks = [
     {
-        label: "dashboard",
+        label: "ড্যাশবোর্ড",
         link: "/admin",
         icon_name: "dashboard-svg-icon",
     },
 
     {
-        label: "income",
+        label: "আয়",
         link: "/admin/incomes",
         icon_name: "wallet-svg-icon",
         sub_links: [
             {
-                label: "income list",
+                label: "আয় তালিকা",
                 link: "/admin/incomes",
             },
-            {
-                label: "income categories",
-                link: "/admin/income-categories",
-            },
+            //{
+            //    label: "income categories",
+            //    link: "/admin/income-categories",
+            //},
         ],
     },
 
     {
-        label: "expense",
+        label: "ব্যয়",
         link: "/admin/expenses",
         icon_name: "bank-card-svg-icon",
         sub_links: [
             {
-                label: "expense list",
+                label: "ব্যয় তালিকা",
                 link: "/admin/expenses",
             },
-            {
-                label: "expense categories",
-                link: "/admin/expense-categories",
-            },
+            //{
+            //    label: "expense categories",
+            //    link: "/admin/expense-categories",
+            //},
         ],
     },
 
-    {
-        label: "site visitors",
-        link: "/admin/visitors",
-        icon_name: "customer-svg-icon",
-    },
+    //{
+    //    label: "site visitors",
+    //    link: "/admin/visitors",
+    //    icon_name: "customer-svg-icon",
+    //},
 
     // {
     //     label: "settings",

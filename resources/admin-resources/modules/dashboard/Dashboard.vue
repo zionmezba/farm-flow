@@ -60,7 +60,7 @@ let incomeCatData = ref({
     series: [],
     chartOptions: {
         title: {
-            text: "Income Categories",
+            text: "আয় ক্যাটাগরি",
             align: "left",
             style: { color: "#475f7b" },
         },
@@ -89,7 +89,7 @@ let expenseCatData = ref({
     series: [],
     chartOptions: {
         title: {
-            text: "Expense Categories",
+            text: "ব্যয় ক্যাটাগরি",
             align: "left",
             style: { color: "#475f7b" },
         },

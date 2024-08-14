@@ -121,7 +121,7 @@ onMounted(async () => {
                     <input
                         type="text"
                         class="form-control"
-                        placeholder="type name.."
+                        placeholder="নাম টাইপ করুন.."
                         v-model="q_name"
                         @keyup="
                             fetchData(1, expenseCategoryStore.limit, q_name)

@@ -4,6 +4,6 @@ import PlusSvg from "../../assets/icons/plus-svg-icon.vue";
 <template>
     <button class="btn btn-sm btn-primary m-1">
         <PlusSvg color="white" />
-        <span class="ms-1 d-600-none">Add New</span>
+        <span class="ms-1 d-600-none">নতুন যোগ করুন</span>
     </button>
 </template>
