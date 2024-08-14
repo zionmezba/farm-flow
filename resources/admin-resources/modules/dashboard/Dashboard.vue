@@ -10,6 +10,8 @@ import HandLoveSVGICon from "../../assets/icons/hand-love-svg-icon.vue";
 
 const loading = ref(false);
 const report_data = ref({});
+const current_month_income_total = ref(0);
+const current_month_expense_total = ref(0);
 
 let incomes_chart_data = ref({
     chartOptions: {
@@ -128,6 +130,13 @@ async function fetchData() {
                 response.data.current_month_incomes.map(
                     (income) => income.amount
                 );
+            
+            // Calculate the total income
+            const total = response.data.current_month_incomes.reduce(
+            (sum, income) => sum + income.amount,  0 );
+            
+            // Update the total income state
+            current_month_income_total.value = total;
 
             expenses_chart_data.value.chartOptions.xaxis.categories =
                 response.data.current_month_expenses.map(
@@ -137,6 +146,13 @@ async function fetchData() {
                 response.data.current_month_expenses.map(
                     (expense) => expense.amount
                 );
+
+                // Calculate the total income
+            const total2 = response.data.current_month_expenses.reduce(
+            (sum, expense) => sum + expense.amount,  0 );
+            
+            // Update the total income state
+            current_month_expense_total.value = total2;
 
             incomeCatData.value.chartOptions.labels =
                 response.data.incomeCatData.map((income) => income.name);
@@ -180,7 +196,7 @@ onMounted(async () => {
                         </div>
                         <div class="my-2">
                             <span class="h3">{{
-                                report_data.today_incomes
+                                current_month_income_total
                             }}</span>
                             <br />
                             <span class="text-muted fs-6">এই মাসের আয়</span>
@@ -201,7 +217,7 @@ onMounted(async () => {
                         </div>
                         <div class="my-2">
                             <span class="h3">{{
-                                report_data.total_incomes
+                                current_month_expense_total
                             }}</span>
                             <br />
                             <span>এই মাসের ব্যয়</span>
@@ -221,7 +237,7 @@ onMounted(async () => {
                                 report_data.total_expenses
                             }}</span>
                             <br />
-                            <span>Total Expenses</span>
+                            <span>মোট ব্যয়</span>
                         </div>
                     </div>
                 </div>
@@ -242,7 +258,7 @@ onMounted(async () => {
                                 report_data.net_incomes
                             }}</span>
                             <br />
-                            <span>Net Incomes</span>
+                            <span>নিট আয়</span>
                         </div>
                     </div>
                 </div>
